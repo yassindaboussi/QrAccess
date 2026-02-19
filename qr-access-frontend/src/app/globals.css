@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* ─── Fonts — add to layout.tsx <head> ───────────────────
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+──────────────────────────────────────────────────────── */
+
+:root {
+  --accent:        #6366f1;
+  --accent-light:  #818cf8;
+  --accent-dark:   #4f46e5;
+  --accent-subtle: #eef2ff;
+  --accent-glow:   rgba(99,102,241,0.15);
+
+  --success:        #10b981;
+  --success-subtle: #ecfdf5;
+  --danger:         #ef4444;
+  --danger-subtle:  #fef2f2;
+  --warning:        #f59e0b;
+  --warning-subtle: #fffbeb;
+  --info:           #3b82f6;
+  --info-subtle:    #eff6ff;
+
+  --surface:    #ffffff;
+  --surface-2:  #f8fafc;
+  --surface-3:  #f1f5f9;
+  --border:     #e2e8f0;
+  --border-2:   #cbd5e1;
+
+  --text-1: #0f172a;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+  --text-4: #cbd5e1;
+}
+
+@layer base {
+  html {
+    font-family: 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--surface-2);
+    color: var(--text-1);
+  }
+
+  code, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  ::selection {
+    background: var(--accent-glow);
+    color: var(--accent-dark);
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: var(--surface-3); }
+  ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.4;
+    cursor: pointer;
+  }
+}
+
+/* Gradient mesh background utility */
+.mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(99,102,241,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 100%, rgba(139,92,246,0.06) 0%, transparent 55%),
+    #f8fafc;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+/* Subtle inner shadow on inputs */
+.input-shadow {
+  box-shadow: inset 0 1px 2px rgba(15,23,42,0.04);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
