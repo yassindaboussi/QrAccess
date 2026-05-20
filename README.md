@@ -25,9 +25,9 @@ A **production-ready** access control platform designed for stadiums, events, an
 ## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                   QrAccess Platform                          │
-├─────────────────────────────────────────────────────────────┤
+┌───────────────────────────────────────────────────────────────┐
+│                       QrAccess Platform                       │
+├───────────────────────────────────────────────────────────────┤
 │                                                               │
 │  Web Dashboard          Mobile Scanner           Admin Panel  │
 │  (Next.js 16)           (Kotlin/Android)         (Next.js)    │
@@ -36,16 +36,16 @@ A **production-ready** access control platform designed for stadiums, events, an
         │                      │                        │
         └──────────────────────┼────────────────────────┘
                                │
-                ┌──────────────▼────────��─────┐
+                ┌──────────────▼─────────────┐
                 │   Express.js REST API      │
-                │   Port: 5000                │
-                └──────────────┬──────────────┘
+                │   Port: 5000               │
+                └──────────────┬─────────────┘
                                │
                 ┌──────────────▼──────────────┐
-                │   MongoDB (Primary DB)     │
-                │   Users • QR Codes         │
-                │   Subscriptions • Scans    │
-                └───────────────────────────┘
+                │   MongoDB (Primary DB)      │
+                │   Users • QR Codes          │
+                │   Subscriptions • Scans     │
+                └─────────────────────────────┘
 ```
 
 ---
@@ -188,44 +188,6 @@ QrAccess/
 - **Frontend**: Next.js image optimization & code splitting
 - **Mobile**: Offline-first approach with local caching
 - **Load Handling**: Rate limiting & connection pooling
-
----
-
-## 🧪 Testing & Quality
-
-```bash
-# Backend
-npm run dev              # Development mode with hot reload
-npm run db:clear         # Reset test database
-
-# Frontend
-npm run lint             # ESLint validation
-
-# Mobile
-./gradlew test           # Run unit tests
-```
-
----
-
-## 🚢 Deployment
-
-### Backend
-```bash
-npm run prod             # Production mode
-# Docker support available in Dockerfile (if present)
-```
-
-### Frontend
-```bash
-npm run build
-npm start
-# Optimized build for production
-```
-
-### Mobile
-```bash
-./gradlew assembleRelease   # Production APK
-```
 
 ---
 
